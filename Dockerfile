@@ -1,9 +1,9 @@
 FROM node:19-alpine
-RUN mkdir/app
+RUN mkdir -p "/app"
 WORKDIR /app
-COPY package.json /app
-COPY package-lock.json /app
+COPY client/package.json /app
+COPY client/package-lock.json /app
 RUN npm install
-COPY public /app
-COPY src /app
+COPY client/public /app
+COPY client/src /app
 CMD ( "npm", "start")
