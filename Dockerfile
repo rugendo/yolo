@@ -4,6 +4,6 @@ WORKDIR /app
 COPY package.json /app
 COPY package-lock.json /app
 RUN npm install
-COPY index.js /app
-COPY index.html /app
+COPY public /app
+COPY src /app
 CMD ( "npm", "start")
